@@ -4,24 +4,48 @@
 :root {
   --bg-default: white;
   --bg-neutral: rgb(245 247 250); /* Increased contrast for section separation */
+  --bg-neutral-hover: rgb(235 239 245); /* Hover state for neutral backgrounds (more visible) */
+  --bg-neutral-active: rgb(225 231 239); /* Active state for neutral backgrounds (stronger than hover) */
   --text-primary: rgb(18 24 38); /* Crisp, readable primary text */
   --text-secondary: rgb(55 70 90); /* Clearly distinct secondary text */
   --text-muted: rgb(85 100 120); /* Readable muted text with clear hierarchy */
   --border-subtle: rgb(218 225 235); /* Visible borders for cards/dividers */
+  --border-strong: rgb(175 190 210); /* Stronger borders for hover states */
   --ring-color: rgb(59 130 246); /* Blue-500 for visible focus rings on light background */
   --ring-offset: rgb(2 6 23); /* Dark offset for ring contrast */
+  /* CTA button tokens - Stripe-grade black button in light mode */
+  --cta-bg: rgb(12 12 12); /* Near-black background for primary CTAs */
+  --cta-text: rgb(255 255 255); /* White text on CTA background */
+  --cta-hover: rgb(20 20 20); /* Slightly lighter on hover */
+  --cta-active: rgb(10 10 10); /* Slightly darker on active */
+  /* Link hover tokens */
+  --link-hover: rgb(18 24 38); /* Primary text color for link hover */
+  /* Card hover tokens */
+  --card-hover-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Subtle shadow on hover */
 }
 
 /* Dark theme - html.dark has higher specificity and overrides :root */
 html.dark {
   --bg-default: rgb(2 6 23); /* slate-950 */
   --bg-neutral: rgb(2 6 23); /* slate-950 */
+  --bg-neutral-hover: rgb(15 23 42); /* Hover state for neutral backgrounds (slightly lighter) */
+  --bg-neutral-active: rgb(30 41 59); /* Active state for neutral backgrounds (stronger than hover) */
   --text-primary: rgb(248 250 252); /* slate-50 */
   --text-secondary: rgb(226 232 240); /* slate-200 */
   --text-muted: rgb(148 163 184); /* slate-400 */
   --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2); /* Stronger borders for hover states in dark mode */
   --ring-color: rgba(255, 255, 255, 0.5); /* white/50 for focus rings */
   --ring-offset: rgb(248 250 252); /* slate-50 for ring offset in dark mode */
+  /* CTA button tokens - white button in dark mode (unchanged behavior) */
+  --cta-bg: rgb(248 250 252); /* slate-50 - white background for primary CTAs */
+  --cta-text: rgb(2 6 23); /* slate-950 - dark text on white background */
+  --cta-hover: rgb(241 245 249); /* slate-100 - slightly lighter on hover */
+  --cta-active: rgb(226 232 240); /* slate-200 - slightly darker on active */
+  /* Link hover tokens */
+  --link-hover: rgb(248 250 252); /* Primary text color for link hover */
+  /* Card hover tokens */
+  --card-hover-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06); /* Subtle shadow on hover */
 }
 
 html {
@@ -44,6 +68,26 @@ body {
     background-color: var(--bg-neutral);
   }
   
+  .hover\:bg-bg-neutral-hover:hover {
+    background-color: var(--bg-neutral-hover);
+  }
+  
+  .active\:bg-bg-neutral-hover:active {
+    background-color: var(--bg-neutral-hover);
+  }
+  
+  .active\:bg-bg-neutral-active:active {
+    background-color: var(--bg-neutral-active);
+  }
+  
+  .hover\:border-border-strong:hover {
+    border-color: var(--border-strong);
+  }
+  
+  .active\:border-border-strong:active {
+    border-color: var(--border-strong);
+  }
+  
   .text-text-primary {
     color: var(--text-primary);
   }
@@ -58,6 +102,37 @@ body {
   
   .border-border-subtle {
     border-color: var(--border-subtle);
+  }
+  
+  .border-border-strong {
+    border-color: var(--border-strong);
+  }
+  
+  /* CTA button semantic utilities */
+  .bg-cta-bg {
+    background-color: var(--cta-bg);
+  }
+  
+  .text-cta-text {
+    color: var(--cta-text);
+  }
+  
+  .hover\:bg-cta-hover:hover {
+    background-color: var(--cta-hover);
+  }
+  
+  .active\:bg-cta-active:active {
+    background-color: var(--cta-active);
+  }
+  
+  /* Link hover semantic utilities */
+  .hover\:text-link-hover:hover {
+    color: var(--link-hover);
+  }
+  
+  /* Card hover semantic utilities */
+  .hover\:shadow-card-hover:hover {
+    box-shadow: var(--card-hover-shadow);
   }
   
   /* Navbar opacity guarantee - ensures navbar remains opaque in all states */

@@ -29,6 +29,18 @@ const config: Config = {
         'ring-offset': {
           focus: 'var(--ring-offset)',
         },
+        cta: {
+          bg: 'var(--cta-bg)',
+          text: 'var(--cta-text)',
+          hover: 'var(--cta-hover)',
+          active: 'var(--cta-active)',
+        },
+        link: {
+          hover: 'var(--link-hover)',
+        },
+      },
+      boxShadow: {
+        'card-hover': 'var(--card-hover-shadow)',
       },
     },
   },

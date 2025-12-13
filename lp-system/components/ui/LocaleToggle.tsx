@@ -41,7 +41,7 @@ export function LocaleToggle() {
       type="button"
       onClick={handleToggle}
       aria-label={ariaLabel}
-      className="px-2 py-1 text-sm rounded cursor-pointer transition-colors text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus"
+      className="px-2 py-1 text-sm rounded cursor-pointer transition-colors text-text-primary hover:bg-bg-neutral focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus"
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();

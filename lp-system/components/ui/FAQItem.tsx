@@ -21,7 +21,7 @@ export function FAQItem({ theme, question, answer, index }: FAQItemProps) {
   return (
     <details className={spacing.block.y.lg}>
       <summary 
-        className="w-full flex items-center justify-between cursor-pointer list-none"
+        className="w-full flex items-center justify-between cursor-pointer list-none hover:text-link-hover transition-colors"
         aria-expanded="false"
         aria-controls={`faq-answer-${index}`}
       >

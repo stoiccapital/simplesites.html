@@ -24,9 +24,9 @@ export function CTAButton({
   type = 'button',
   className = '',
 }: CTAButtonProps) {
-  // Primary variant: brand blue in light mode, semantic tokens in dark mode
-  // Ghost variant: semantic tokens in both modes
-  const themeColors = colors[theme];
+  // Use semantic tokens only - no theme branching
+  // Primary variant: uses semantic CTA tokens (black in light mode, white in dark mode)
+  // Ghost variant: uses semantic border/text tokens
   const baseClasses = variant === 'primary' 
     ? components.button.primary.base 
     : components.button.secondary.base;
@@ -34,21 +34,14 @@ export function CTAButton({
   let variantClasses: string;
   
   if (variant === 'primary') {
-    if (theme === 'dark') {
-      // Dark mode primary uses semantic tokens (white variant)
-      variantClasses = `${colors.dark.cta.white.bg} ${colors.dark.cta.white.text} ${colors.dark.cta.white.hover} ${colors.dark.cta.white.active}`;
-    } else {
-      // Light mode primary uses brand blue (intentional brand CTA)
-      variantClasses = `${colors.light.primary.bg} ${colors.light.primary.text} ${colors.light.primary.hover}`;
-    }
+    // Primary uses semantic CTA tokens (no theme branching)
+    // Hover and active states use token-based classes that adapt automatically
+    variantClasses = `${colors.light.primary.bg} ${colors.light.primary.text} ${colors.light.primary.hover} ${colors.light.primary.active}`;
   } else {
-    // Ghost variant: semantic tokens in both modes
-    if (theme === 'dark') {
-      variantClasses = `${colors.dark.cta.ghost.bg} ${colors.dark.cta.ghost.border} ${colors.dark.cta.ghost.text} ${colors.dark.cta.ghost.hover} ${colors.dark.cta.ghost.active} border`;
-    } else {
-      // Light mode ghost uses semantic tokens
-      variantClasses = `border-border-subtle text-text-primary hover:bg-bg-neutral active:bg-bg-neutral`;
-    }
+    // Ghost variant: semantic tokens in both modes (no theme branching)
+    // Enhanced hover: background + border color change for better visibility
+    // Active state slightly stronger than hover
+    variantClasses = `bg-transparent border border-border-subtle text-text-primary hover:bg-bg-neutral-hover hover:border-border-strong active:bg-bg-neutral-active active:border-border-strong`;
   }
 
   return (

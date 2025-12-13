@@ -139,11 +139,12 @@ export const colors = {
       light: 'text-text-secondary',
       midLight: 'text-text-muted',
     },
-    // Primary (CTA only)
+    // Primary (CTA only) - uses semantic tokens for Stripe-grade black button
     primary: {
-      bg: 'bg-blue-600',
-      text: 'text-white',
-      hover: 'hover:bg-blue-700',
+      bg: 'bg-cta-bg',
+      text: 'text-cta-text',
+      hover: 'hover:bg-cta-hover',
+      active: 'active:bg-cta-active',
     },
     // Accent
     accent: {
@@ -198,10 +199,10 @@ export const colors = {
     // CTA button tokens - use semantic tokens for default surfaces
     cta: {
       white: {
-        bg: 'bg-bg-default',
-        text: 'text-text-primary',
-        hover: 'hover:bg-bg-neutral',
-        active: 'active:bg-bg-neutral',
+        bg: 'bg-cta-bg',
+        text: 'text-cta-text',
+        hover: 'hover:bg-cta-hover',
+        active: 'active:bg-cta-active',
       },
       ghost: {
         bg: 'bg-transparent',

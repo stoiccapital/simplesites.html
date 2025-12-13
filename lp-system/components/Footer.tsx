@@ -24,13 +24,13 @@ export function Footer({ labels }: FooterProps) {
             {labels.copyright}
           </div>
           <nav aria-label="Footer navigation" className={`flex items-center ${spacing.gap.md}`}>
-            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:opacity-70`}>
+            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:text-link-hover transition-colors`}>
               {labels.links.privacy}
             </a>
-            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:opacity-70`}>
+            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:text-link-hover transition-colors`}>
               {labels.links.terms}
             </a>
-            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:opacity-70`}>
+            <a href="#" className={`${typography.textXs} ${footer.text.muted} hover:text-link-hover transition-colors`}>
               {labels.links.contact}
             </a>
           </nav>

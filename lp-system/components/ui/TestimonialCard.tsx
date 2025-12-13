@@ -39,7 +39,8 @@ export function TestimonialCard({
         ${spacing.card.px}
         ${spacing.card.pyLg}
         ${components.shadow.surface1}
-        ${isDark ? `${components.transition.default} hover:${components.shadow.surface2}` : ''}
+        ${components.transition.default}
+        hover:shadow-card-hover
         ${className}
       `}
     >

@@ -69,7 +69,7 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
         <div className={`flex items-center justify-between ${navbar.height}`}>
           {/* Left: Logo */}
           <div 
-            className="text-xl font-bold text-text-primary cursor-pointer hover:opacity-70 transition-opacity"
+            className="text-xl font-bold text-text-primary cursor-pointer hover:text-link-hover transition-colors"
             onClick={handleLogoClick}
             role="button"
             tabIndex={0}
@@ -91,7 +91,7 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
                 key={link.id}
                 href={`#${link.id}`} 
                 onClick={(e) => handleNavClick(e, link.id)}
-                className="text-text-secondary hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus rounded"
+                className="text-text-secondary hover:text-link-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus rounded"
               >
                 {link.label}
               </a>
@@ -114,7 +114,7 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? labels.ariaLabels.closeMenu : labels.ariaLabels.openMenu}
-              className="md:hidden p-2 rounded text-text-primary hover:opacity-70 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus"
+              className="md:hidden p-2 rounded text-text-primary hover:bg-bg-neutral transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus"
             >
               {/* Hamburger Icon */}
               <svg
@@ -165,7 +165,7 @@ export function Navbar({ theme, labels, locale }: NavbarProps) {
                   key={link.id}
                   href={`#${link.id}`}
                   onClick={(e) => handleNavClick(e, link.id)}
-                  className={`text-text-secondary hover:opacity-70 transition-opacity ${spacing.block.y.sm} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus rounded`}
+                  className={`text-text-secondary hover:text-link-hover transition-colors ${spacing.block.y.sm} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-ring-focus rounded`}
                 >
                   {link.label}
                 </a>

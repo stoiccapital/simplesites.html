@@ -44,7 +44,8 @@ export function PricingCard({
         ${spacing.card.padding.md}
         ${components.shadow.surface1}
         flex flex-col h-full
-        ${isDark ? `${components.transition.default} hover:${components.shadow.surface2}` : ''}
+        ${components.transition.default}
+        hover:shadow-card-hover
         ${className}
       `}
     >
